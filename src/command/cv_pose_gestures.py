@@ -323,13 +323,9 @@ class PoseGestureDetector:
         def draw_wrist(wrist: WristState, color):
             if wrist.x_px is None or wrist.y_px is None:
                 return
-            cv2.circle(
-                frame,
-                (int(wrist.x_px), int(wrist.y_px)),
-                6,
-                color,
-                -1,
-            )
+            x = int(state.frame_w - wrist.x_px)
+            y = int(wrist.y_px)
+            cv2.circle(frame, (x, y), 6, color, -1)
 
         draw_wrist(state.left, (255, 0, 0))
         draw_wrist(state.right, (0, 0, 255))

@@ -8,6 +8,7 @@ import time
 
 import platform
 import signal
+import glfw
 import mujoco
 import mujoco.viewer
 
@@ -92,7 +93,6 @@ def main() -> None:
     lock = threading.Lock()
 
     def key_callback(key: int) -> None:
-        glfw = mujoco.glfw.glfw
         mapping = {
             glfw.KEY_W: "forward",
             glfw.KEY_UP: "forward",
