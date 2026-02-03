@@ -46,7 +46,7 @@ python -m src.apps.run_robot_walk \
 ### MirrorView (robot → MuJoCo)
 ```bash
 mjpython -m src.apps.run_mirror_view \
-  --xml third_party/unitree_mujoco/unitree_robots/g1/scene.xml \
+  --xml bundles/g1_mjlab/scene.xml \
   --interface en0 \
   --domain-id 0
 ```

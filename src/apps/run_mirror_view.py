@@ -19,7 +19,7 @@ def _build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="MirrorView: robot LowState -> MuJoCo")
     parser.add_argument(
         "--xml",
-        default="third_party/unitree_mujoco/unitree_robots/g1/scene.xml",
+        default="bundles/g1_mjlab/scene.xml",
         help="MuJoCo scene XML for visualization",
     )
     parser.add_argument("--interface", default="en0")
