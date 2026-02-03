@@ -94,17 +94,10 @@ def main() -> None:
 
     def key_callback(key: int) -> None:
         mapping = {
-            glfw.KEY_W: "forward",
             glfw.KEY_UP: "forward",
-            glfw.KEY_A: "left",
             glfw.KEY_LEFT: "left",
-            glfw.KEY_D: "right",
             glfw.KEY_RIGHT: "right",
-            glfw.KEY_Q: "yaw_left",
-            glfw.KEY_E: "yaw_right",
-            glfw.KEY_S: "stop",
             glfw.KEY_DOWN: "stop",
-            glfw.KEY_SPACE: "stop",
         }
         cmd_name = mapping.get(key)
         if cmd_name:

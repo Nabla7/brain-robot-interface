@@ -102,11 +102,10 @@ MediaPipe auto-downloads the pose model to `models/pose_landmarker_lite.task` on
 
 ## Keyboard controls (SimWalk only)
 
-- `W` / `Up`: forward
-- `A` / `Left`: left
-- `D` / `Right`: right
-- `Q` / `E`: yaw left/right
-- `S` / `Down` / `Space`: stop
+- `Up`: forward
+- `Left`: left
+- `Right`: right
+- `Down`: stop
 
 Keyboard inputs override CV for `--key-timeout` seconds.
 
