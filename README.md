@@ -24,7 +24,11 @@ git submodule update --init --recursive
 
 ## Run
 
-### SimWalk (MJLab ONNX in MuJoCo)
+### macOS
+
+Use `mjpython` for any MuJoCo viewer windows.
+
+#### SimWalk (MJLab ONNX in MuJoCo)
 ```bash
 mjpython run_sim.py \
   --bundle bundles/g1_mjlab \
@@ -33,7 +37,7 @@ mjpython run_sim.py \
   --show-cv
 ```
 
-### RobotWalk (real Unitree G1, Sport RPC)
+#### RobotWalk (real Unitree G1, Sport RPC)
 ```bash
 python -m src.apps.run_robot_walk \
   --interface en0 \
@@ -43,9 +47,40 @@ python -m src.apps.run_robot_walk \
   --show-cv
 ```
 
-### MirrorView (robot → MuJoCo)
+#### MirrorView (robot → MuJoCo)
 ```bash
 mjpython -m src.apps.run_mirror_view \
+  --xml bundles/g1_mjlab/scene.xml \
+  --interface en0 \
+  --domain-id 0
+```
+
+### Linux
+
+Use the venv `python` for all commands.
+
+#### SimWalk (MJLab ONNX in MuJoCo)
+```bash
+python run_sim.py \
+  --bundle bundles/g1_mjlab \
+  --source both \
+  --log-hz 30 \
+  --show-cv
+```
+
+#### RobotWalk (real Unitree G1, Sport RPC)
+```bash
+python -m src.apps.run_robot_walk \
+  --interface en0 \
+  --domain-id 0 \
+  --source cv \
+  --log-hz 30 \
+  --show-cv
+```
+
+#### MirrorView (robot → MuJoCo)
+```bash
+python -m src.apps.run_mirror_view \
   --xml bundles/g1_mjlab/scene.xml \
   --interface en0 \
   --domain-id 0
