@@ -7,36 +7,32 @@ The only intended entrypoint is `examples/minimal_policy.py`.
 ## Setup
 
 ```bash
-git clone --recurse-submodules git@github.com:Nabla7/brain-robot-interface.git
+git clone https://github.com/Nabla7/brain-robot-interface.git
 cd brain-robot-interface
-
-python -m venv .venv
+uv sync
 source .venv/bin/activate
-pip install -r requirements.txt
-pip install -e .
-```
-
-If you already cloned without submodules:
-```bash
-git submodule update --init --recursive
 ```
 
 ## Run
 
 ### Sim (macOS)
+
 ```bash
-mjpython examples/minimal_policy.py
+uv run mjpython examples/minimal_policy.py
 ```
 
 ### Sim (Linux)
+
 ```bash
-python examples/minimal_policy.py
+uv run python examples/minimal_policy.py
 ```
 
 ### Robot + Mirror
+
 Set `backend="robot"` in the example script and run it normally:
+
 ```bash
-python examples/minimal_policy.py
+uv run python examples/minimal_policy.py
 ```
 
 ## API
@@ -70,4 +66,3 @@ ctrl.set_action(Action.FORWARD)
 
 - On macOS, use `mjpython` for any MuJoCo window.
 - Robot mode requires DDS deps (e.g., `cyclonedds`) from Unitree SDK.
-

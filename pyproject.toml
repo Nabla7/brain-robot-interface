@@ -6,11 +6,22 @@ build-backend = "setuptools.build_meta"
 name = "bri"
 version = "0.1.0"
 description = "Brain Robot Interface"
-requires-python = ">=3.10"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "mediapipe>=0.10.32",
+  "mujoco>=3.4.0",
+  "numpy>=2.2.6",
+  "onnxruntime>=1.24.1",
+  "opencv-python>=4.13.0.92",
+  "torch>=2.10.0",
+  "unitree-sdk2py",
+]
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+package-dir = { "" = "src" }
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.uv.sources]
+unitree-sdk2py = { git = "https://github.com/Kaweees/unitree_sdk2_python.git", branch = "main" }
