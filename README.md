@@ -7,6 +7,14 @@ The only intended entrypoint is `examples/minimal_policy.py`.
 ## Setup
 
 ```bash
+cd ~
+git clone https://github.com/eclipse-cyclonedds/cyclonedds -b releases/0.10.x
+cd cyclonedds && mkdir build install && cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=../install
+cmake --build . --target install
+```
+
+```bash
 git clone https://github.com/Nabla7/brain-robot-interface.git
 cd brain-robot-interface
 uv sync
@@ -18,13 +26,13 @@ source .venv/bin/activate
 ### Sim (macOS)
 
 ```bash
-uv run mjpython examples/minimal_policy.py
+CYCLONEDDS_HOME="$HOME/cyclonedds/install" uv run mjpython examples/minimal_policy.py
 ```
 
 ### Sim (Linux)
 
 ```bash
-uv run python examples/minimal_policy.py
+CYCLONEDDS_HOME="$HOME/cyclonedds/install" uv run python examples/minimal_policy.py
 ```
 
 ### Robot + Mirror
@@ -32,7 +40,7 @@ uv run python examples/minimal_policy.py
 Set `backend="robot"` in the example script and run it normally:
 
 ```bash
-uv run python examples/minimal_policy.py
+CYCLONEDDS_HOME="$HOME/cyclonedds/install" uv run python examples/minimal_policy.py
 ```
 
 ## API
